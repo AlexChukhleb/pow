@@ -1,0 +1,9 @@
+FROM golang:1.18-alpine
+
+ADD . /sources
+WORKDIR /sources
+
+RUN go build -o /usr/local/bin/pow ./cmd/server/main.go
+
+CMD pow
+
